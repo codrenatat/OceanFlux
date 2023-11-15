@@ -1,0 +1,25 @@
+		/* navbar2*/
+
+		.navbar2 {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		  }
+		  
+		  .navbar2 h1 {
+			font-size: 4.35em;
+			font-weight: 900;
+			letter-spacing: -0.035em;
+			line-height: 1em;
+            color: rgba(37, 172, 255, 0.651); 
+			margin: 0;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 15px;
+		  } 
+
+          .tiles{
+            margin-top: -130px;
+          }
+		  

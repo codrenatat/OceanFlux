@@ -1,0 +1,103 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+.login_btn {
+    width: 100%;
+    background: lightblue;
+    color: white;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: lightblue !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #c0392b !important;
+}
+.centered-buttons {
+    text-align: center;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+}
+
+.user_card {
+    height: 400px;
+    width: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+.custom-btn.btn-primary {
+    padding: 100px;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    background-color: rgba(0, 217, 255, 0.385);
+    color: black;
+    transition: color 0.3s;
+    margin-left: 270px;
+    width: 700px;
+    height: 500px;
+    margin-left: -100px;
+    
+}
+
+.custom-btn.btn-primary:hover {
+    color: rgb(242, 242, 245);
+    background-color: rgb(2, 120, 120);
+    border: none;
+    font-size: 45px;
+
+
+}
+
+a:hover{
+    text-decoration: none; /* Quitar subrayado al hacer hover */
+}
+
+
+
