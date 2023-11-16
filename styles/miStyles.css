@@ -786,4 +786,29 @@ a:hover {
   color: inherit; 
 }
     
-    
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: 20px auto; /* Agrega un margen superior e inferior de 20px y centrará la tabla horizontalmente */
+	margin-bottom: 12cm;
+}
+
+th{
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 10px;
+	font-size: 35px;
+}
+
+td{
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	font-size: 30px;
+
+}
+
+th {
+	background-color: rgba(243, 243, 243, 0.496);
+}
+
