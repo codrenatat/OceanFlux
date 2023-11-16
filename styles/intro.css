@@ -675,18 +675,15 @@ input, select, textarea {
 	  .card-title {
 		font-size: 30px;
 		font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-		color: #012e46;
+		color: #88b4be;
 	  
 	  
 	  }
 	  
 	  .card-title:hover {
 		font-size: 35px;
-		color: #FFFFFF;
-			font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	  
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		color: #1466f3;
+		font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	  }
 	  
 	  a {
