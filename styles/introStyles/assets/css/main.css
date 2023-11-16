@@ -2829,7 +2829,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 3em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -2989,11 +2989,17 @@ input, select, textarea {
 		max-width: 80%;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
-		background: #8499e7;
+		background: #88b4be;
 		color: #ffffff;
 		cursor: default;
 		visibility: hidden;
 		z-index: 10002;
+
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-weight: 400;
 	}
 
 		#menu > .inner {
@@ -3332,3 +3338,14 @@ input, select, textarea {
 	.fa-solid{
 		margin-right: 10px;
 	}
+
+	.navbar2 h1 {
+        font-size: 2em;
+        font-weight: 900;
+        letter-spacing: -0.035em;
+        line-height: 1em;
+        color: #88b4be;
+        margin: 0;
+        margin-top: 2cm;
+        margin-left: 1cm;
+      } 
