@@ -1,98 +1,180 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>OceanFlux</title>
-  		<link rel="icon" type="image/png" href="../photos/icons/icon.png">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../styles/intro.css" /><noscript>
-		<link rel="stylesheet" href="../styles/introStyles/assets/css/noscript.css" /></noscript>
-		<link rel="stylesheet" href="../styles/playasStyles/main.css" /></noscript>
-		<script src="https://kit.fontawesome.com/4167f19ec8.js" crossorigin="anonymous"></script>
-	</head>
-	<body class="is-preload">
 
-		<nav class="navbar2">
-            <h1>OceanFlux</h1>
-        </nav>
+<head>
+	<title>OceanFlux</title>
+	<link rel="icon" type="image/png" href="../photos/icons/icon.png">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../styles/intro.css" />
+	<noscript>
+		<link rel="stylesheet" href="../styles/introStyles/assets/css/noscript.css" />
+	</noscript>
+	<link rel="stylesheet" href="../styles/playasStyles/main.css" />
+	<script src="https://kit.fontawesome.com/4167f19ec8.js" crossorigin="anonymous"></script>
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<a class="nav-link" href="#" id="loginButton" role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
-											<i class="fa-regular fa-user custom-icon" style="color: #88b4be;"></i> Mi cuenta
-										</a>
-										<a class="nav-link" href="/views/misviajes.html" id="misviajes" role="button" style="margin: 1cm;">
-											<i class="fa-solid fa-umbrella-beach" style="color: #88b4be;"></i> Mis viajes
-										</a> 
-									
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-						</div>
-					</header>
-				<!-- Menu -->
-				<nav id="menu">
-					<h2>Menú</h2>
-					<ul>
-						<li><a href="intro.html">Inicio</a></li>
-						<li><a href="playas.html">Playas</a></li>
-						<li><a href="aboutus.html">About us</a></li> 
-						<li><a href="hoteles.html">Hoteles</a></li>
-						<li><a href="convenios.html">Convenios</a></li> 
-                        <li><a href="logIn.html"><i class="fa-solid fa-user" style="color: #ffffff;"></i> Mi Cuenta</a></li>
-						<li><a href="misviajes.html"><i class="fa-solid fa-umbrella-beach" style="color: #ffffff;"></i> Mis Viajes</a></li>
-					</ul>
-				</nav>
-				<!-- Main -->
-					
-						<div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card mb-4 bs5-card-default card-bg">
-                                        <div class="card-body no-decoration">
-                                            <h5 class="card-title"><a href="./playas.html">Playas</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card mb-4 bs5-card-default card-bg">
-                                        <div class="card-body no-decoration">
-                                            <h5 class="card-title"><a href="./hoteles.html">Hoteles</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card mb-4 bs5-card-default card-bg">
-                                        <div class="card-body no-decoration">
-                                            <h5 class="card-title"><a href="./aboutus.html">Sobre Nosotros</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card mb-4 bs5-card-default card-bg">
-                                        <div class="card-body no-decoration">
-                                            <h5 class="card-title"><a href="./convenios.html">Convenios</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<nav class="navbar2">
+	<h1>OceanFlux</h1>
+</nav>
 
-			
+<!-- Wrapper -->
+<div id="wrapper">
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<!-- Nav -->
+			<nav>
+				<ul>
+					<!-- Modal de inicio de sesión -->
+					<a class="nav-link" href="#" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal" role="button">
+						<i class="fa-regular fa-user custom-icon" style="color: #88b4be;"></i> Mi cuenta
+					</a>
+					<a class="nav-link" href="/views/misviajes.html" id="misviajes" role="button" style="margin: 1cm;">
+						<i class="fa-solid fa-umbrella-beach" style="color: #88b4be;"></i> Mis viajes
+					</a>
+					<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
-		<!-- Scripts -->
-			<script src="../styles/introStyles/assets/js/jquery.min.js"></script>
-			<script src="../styles/introStyles/assets/js/browser.min.js"></script>
-			<script src="../styles/introStyles/assets/js/breakpoints.min.js"></script>
-			<script src="../styles/introStyles/assets/js/util.js"></script>
-			<script src="../styles/introStyles/assets/js/main.js"></script>
+	<!-- Menu -->
+	<nav id="menu">
+		<h2>Menú</h2>
+		<ul>
+			<li><a href="intro.html">Inicio</a></li>
+			<li><a href="playas.html">Playas</a></li>
+			<li><a href="aboutus.html">About us</a></li>
+			<li><a href="hoteles.html">Hoteles</a></li>
+			<li><a href="convenios.html">Convenios</a></li>
+			<li>
+				<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" role="button">
+					<i class="fa-solid fa-user" style="color: #ffffff;"></i> Mi Cuenta
+				</a>
+			</li>
 
-	</body>
+			<li><a href="misviajes.html"><i class="fa-solid fa-umbrella-beach" style="color: #ffffff;"></i> Mis Viajes</a></li>
+		</ul>
+	</nav>
+
+	<!-- Main -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card mb-4 bs5-card-default card-bg">
+					<div class="card-body no-decoration">
+						<h5 class="card-title"><a href="./playas.html">Playas</a></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card mb-4 bs5-card-default card-bg">
+					<div class="card-body no-decoration">
+						<h5 class="card-title"><a href="./hoteles.html">Hoteles</a></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card mb-4 bs5-card-default card-bg">
+					<div class="card-body no-decoration">
+						<h5 class="card-title"><a href="./aboutus.html">Sobre Nosotros</a></h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card mb-4 bs5-card-default card-bg">
+					<div class="card-body no-decoration">
+						<h5 class="card-title"><a href="./convenios.html">Convenios</a></h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modals -->
+<!-- Modal de inicio de sesión -->
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="mb-3">
+						<label for="usuario" class="form-label">Usuario</label>
+						<input type="text" class="form-control" id="usuario" placeholder="Usuario">
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Contraseña</label>
+						<input type="password" class="form-control" id="password" placeholder="Contraseña">
+					</div>
+					<div class="d-flex justify-content-center mt-3">
+						<button type="button" class="btn btn-success">Iniciar Sesión</button>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#" data-bs-toggle="modal" data-bs-target="#signupModal" class="btn btn-primary">Crear Cuenta</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal de registro -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="signupModalLabel">Crear Cuenta</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="mb-3">
+						<label for="nombre" class="form-label">Nombre</label>
+						<input type="text" class="form-control" id="nombre" placeholder="Nombre">
+					</div>
+					<div class="mb-3">
+						<label for="newusuario" class="form-label">Usuario</label>
+						<input type="text" class="form-control" id="newusuario" placeholder="Usuario">
+					</div>
+					<div class="mb-3">
+						<label for="edad" class="form-label">Edad</label>
+						<input type="text" class="form-control" id="edad" placeholder="Edad">
+					</div>
+					<div class="mb-3">
+						<label for="newpassword" class="form-label">Nueva Contraseña</label>
+						<input type="password" class="form-control" id="newpassword" placeholder="Nueva Contraseña">
+					</div>
+					<div class="d-flex justify-content-center mt-3">
+						<button type="button" class="btn btn-success">Guardar</button>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../styles/introStyles/assets/js/browser.min.js"></script>
+<script src="../styles/introStyles/assets/js/breakpoints.min.js"></script>
+<script src="../styles/introStyles/assets/js/util.js"></script>
+<script src="../styles/introStyles/assets/js/main.js"></script>
+
+</body>
 </html>
