@@ -1,3 +1,28 @@
+const express = require('express');
+
+require("./database");
+
+const cors = require('cors');
+const app = express();
+
+//Middlewares
+app.use(cors());
+app.use(express.json());
+
+//Routes
+//app.use(require("./routes/intro"));
+
+//Init
+app.listen(3000, () => {
+  console.log('Server running in port: 3000');
+});
+
+//Imprimiendo un hello world para ver si funciona. 
+app.get('/', (req,res) => {
+  res.send('hello world');
+});
+
+module.exports = app;
 /*
 const express = require('express');
 const cors = require('cors');
