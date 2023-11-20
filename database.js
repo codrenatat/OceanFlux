@@ -1,6 +1,6 @@
-/*const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const { connected } = require("process");
-const mongoConnection = "mongodb+srv://renatatejeda:<password>@cluster0.hiusly6.mongodb.net/test";
+const mongoConnection = "mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/";
 
  let database = mongoose.connection;
 
@@ -18,4 +18,4 @@ database.on('error', (err) => {
     console.error('ERROR!!', err);
 });
 
-mongoose.connect(mongoConnection);*/
+mongoose.connect(mongoConnection);
