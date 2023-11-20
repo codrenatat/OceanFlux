@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const { connected } = require("process");
+
+//const mongoConnection = "mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/";
 const mongoConnection = "mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/";
 
  let database = mongoose.connection;

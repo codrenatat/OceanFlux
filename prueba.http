@@ -1,0 +1,14 @@
+###Hola
+GET http://localhost:3000/hotels
+
+###P
+POST http://localhost:3000/hotels
+Content-Type: application/json
+
+{
+    "nombreHotel": "hi",
+    "playa": "meko",
+    "precioxnoche": "123",
+    "convenio": "american"
+
+}

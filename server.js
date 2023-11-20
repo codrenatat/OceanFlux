@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-//app.use(require("./routes/intro"));
+app.use(require("./routes/hotels"));
 
 //Init
 app.listen(3000, () => {
@@ -23,7 +23,6 @@ app.get('/', (req,res) => {
 });
 
 module.exports = app;
-
 
 
 
