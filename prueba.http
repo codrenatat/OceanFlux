@@ -1,7 +1,7 @@
-###Hola
+###Prueba del GET de hotels
 GET http://localhost:3000/hotels
 
-###P
+###Prueba del POST de hotels
 POST http://localhost:3000/hotels
 Content-Type: application/json
 
@@ -11,4 +11,19 @@ Content-Type: application/json
     "precioxnoche": "123",
     "convenio": "american"
 
+}
+
+###Prueba del GET de viajes
+GET http://localhost:3000/viajes
+
+###Prueba del POST de viajes
+POST http://localhost:3000/viajes
+Content-Type: application/json
+
+{
+    "usuario": "username",  
+    "correo": "user@example.com",  
+    "playa": "beach_name",
+    "hotel": "hotel_name",
+    "total": 2.0
 }

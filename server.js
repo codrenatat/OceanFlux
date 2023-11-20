@@ -11,6 +11,7 @@ app.use(express.json());
 
 //Routes
 app.use(require("./routes/hotels"));
+app.use(require("./routes/viajes"));
 
 //Init
 app.listen(3000, () => {

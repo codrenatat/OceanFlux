@@ -1,12 +1,11 @@
 const {Router} = require('express');
 const router = Router();
 
-const hotel = require("../models/hotelModel");
 const hotelModel = require('../models/hotelModel');
 
 router.get("/hotels", async(req, res) => {
     try{
-        const mihotels = await hotel.find();
+        const mihotels = await hotelModel.find();
         res.status(200).json(mihotels);
     }catch(error){
         res.status(500).send("Cannot get mihotel");
