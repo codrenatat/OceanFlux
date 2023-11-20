@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tbody = table.querySelector('tbody');
 
   // Función para agregar una nueva fila a la tabla
-  function addRow(idViaje, playa, hotel, numNoches, numPersonas, precioNoche) {
+  function addRow(idViaje, playa, hotel, numNoches, numPersonas, precioxnoche) {
     const newRow = document.createElement('tr');
     newRow.innerHTML = `
         <td>${idViaje}</td>
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <td>${hotel}</td>
         <td>${numNoches}</td>
         <td>${numPersonas}</td>
-        <td class="total">${calcularTotal(numNoches, numPersonas, precioNoche)}</td>
+        <td class="total">${calcularTotal(numNoches, numPersonas, precioxnoche)}</td>
         <td><button onclick="eliminarViaje(this)">Eliminar</button></td>
         `;
     tbody.appendChild(newRow);
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Función para calcular el total y actualizar la columna correspondiente
-  function calcularTotal(numNoches, numPersonas, precioNoche) {
-    const total = numNoches * numPersonas * precioNoche;
+  function calcularTotal(numNoches, numPersonas, precioxnoche) {
+    const total = numNoches * numPersonas * precioxnoche;
     return total;
   }
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         viaje.hotel,
         viaje.numNoches,
         viaje.numPersonas,
-        viaje.precioNoche
+        viaje.precioxnoche
       );
     }
   }

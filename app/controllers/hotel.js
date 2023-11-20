@@ -8,7 +8,7 @@ class HotelException {
 
 class Hotel {
   constructor(nombreHotel, playa, precioxnoche, convenio) {
-    this._uuid = UUID(); // Asumo que tienes una función UUID que genera un identificador único
+
 
     this._nombreHotel = nombreHotel;
     this._playa = playa;
