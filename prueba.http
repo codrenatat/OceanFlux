@@ -27,3 +27,19 @@ Content-Type: application/json
     "hotel": "hotel_name",
     "total": 2.0
 }
+
+###Prueba del GET de users
+GET http://localhost:3000/users
+
+###Prueba del POST de users
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "nombre": "username",  
+    "correo": "user@example.com",  
+    "contrasenia": "lol",
+    "edad": 21,
+    "genero": "F"
+}
+
