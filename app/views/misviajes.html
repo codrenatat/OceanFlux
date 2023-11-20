@@ -56,23 +56,11 @@
                                                     <th>ID Viaje</th>
                                                     <th>Playa</th>
                                                     <th>Hotel</th>
-                                                    <th>Fecha de Llegada</th>
-                                                    <th>Fecha de Salida</th>
-                                                    <th># Personas</th>
+                                                    <th>Num Noches</th>
+                                                    <th>Num Personas</th>
                                                     <th>Total</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Quintana Roo</td>
-                                                    <td>Hotel 1</td>
-                                                    <td>2023-11-09</td>
-                                                    <td>2023-11-16</td>
-                                                    <td>2</td>
-                                                    <td>$500</td>
-                                                </tr>
-                                            </tbody>
                                         </table>
 									</div>
 							</div>
@@ -80,6 +68,23 @@
 					
 					</div>
 			</div>
+
+
+			<!--
+				Modifica tu tabla para mostrar la información de los viajes 
+<tbody>
+    <% for (let viaje of user.viajes) { %>
+        <tr>
+            <td><%= viaje.hotel %></td>
+            <td><%= viaje.noches %></td>
+            <td><%= viaje.numPersonas %></td>
+            <td><%= viaje.total %></td>
+             Agrega botones o formularios para modificar el número de noches y personas 
+        </tr>
+    <% } %>
+</tbody>
+
+			-->
 
 		<!-- Scripts -->
 			<script src="../styles/introStyles/assets/js/jquery.min.js"></script>
