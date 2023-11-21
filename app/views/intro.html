@@ -125,7 +125,10 @@
 						<input type="password" class="form-control" id="password" placeholder="Contraseña">
 					</div>
 					<div class="d-flex justify-content-center mt-3">
-						<button type="button" class="btn btn-success">Iniciar Sesión</button>
+						<button type="button" class="btn btn-success" onclick="iniciarSesion()">Iniciar Sesión</button>
+						<div id="loadingSpinner" class="spinner-border text-success" role="status" style="display: none;">
+							<span class="sr-only">Loading...</span>
+						</div>
 					</div>
 				</form>
 			</div>
@@ -151,19 +154,28 @@
 						<input type="text" class="form-control" id="nombre" placeholder="Nombre">
 					</div>
 					<div class="mb-3">
-						<label for="newusuario" class="form-label">Usuario</label>
-						<input type="text" class="form-control" id="newusuario" placeholder="Usuario">
+						<label for="correo" class="form-label">Correo</label>
+						<input type="text" class="form-control" id="correo" placeholder="Correo">
+					</div>
+					<div class="mb-3">
+						<label for="newpassword" class="form-label">Nueva Contraseña</label>
+						<input type="password" class="form-control" id="newpassword" placeholder="Nueva Contraseña">
 					</div>
 					<div class="mb-3">
 						<label for="edad" class="form-label">Edad</label>
 						<input type="text" class="form-control" id="edad" placeholder="Edad">
 					</div>
 					<div class="mb-3">
-						<label for="newpassword" class="form-label">Nueva Contraseña</label>
-						<input type="password" class="form-control" id="newpassword" placeholder="Nueva Contraseña">
+						<label for="genero" class="form-label">Género</label>
+						<select class="form-select" id="genero">
+							<option value="hombre">Hombre</option>
+							<option value="mujer">Mujer</option>
+							<option value="otro">Otro</option>
+							<option value="unknown">Prefiero no decirlo</option>
+						</select>
 					</div>
 					<div class="d-flex justify-content-center mt-3">
-						<button type="button" class="btn btn-success">Guardar</button>
+						<button type="button" class="btn btn-success" onclick="registrarUsuario()">Guardar</button>
 					</div>
 				</form>
 			</div>
@@ -183,6 +195,7 @@
 <script src="../styles/introStyles/assets/js/breakpoints.min.js"></script>
 <script src="../styles/introStyles/assets/js/util.js"></script>
 <script src="../styles/introStyles/assets/js/main.js"></script>
+<script src="../../login.js"></script>
 
 </body>
 </html>
