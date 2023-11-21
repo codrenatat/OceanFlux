@@ -1,4 +1,15 @@
+$(document).ready(function() {
+    $("#loginButton").click(function() {
+        iniciarSesion();
+    });
+
+    $("#signupButton").click(function() {
+        registrarUsuario();
+    });
+});
+
 function iniciarSesion() {
+    console.log("Iniciando sesión...");
     // Mostrar el spinner de carga
     document.getElementById("loadingSpinner").style.display = "inline-block";
 
@@ -26,9 +37,9 @@ function iniciarSesion() {
     });
 }
 
-
-
 function registrarUsuario() {
+    console.log("Registro...");
+    document.getElementById("loadingS").style.display = "inline-block";
     const nombre = document.getElementById("nombre").value;
     const correo = document.getElementById("correo").value;
     const contrasenia = document.getElementById("newpassword").value;
@@ -50,6 +61,10 @@ function registrarUsuario() {
         },
         error: function (error) {
             console.error("Error al registrar usuario:", error);
+        },
+        complete: function () {
+            document.getElementById("loadingS").style.display = "none";
         }
     });
 }
+
