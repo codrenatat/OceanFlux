@@ -40,6 +40,6 @@ Content-Type: application/json
     "correo": "user@example.com",  
     "contrasenia": "lol",
     "edad": 21,
-    "genero": "F"
+    "genero": "otro"
 }
 
