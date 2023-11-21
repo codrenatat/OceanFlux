@@ -3,7 +3,7 @@ const router = Router();
 
 const hotelModel = require("../models/hotelModel");
 
-router.get("/hotels", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const mihotels = await hotelModel.find();
     res.status(200).json(mihotels);
@@ -12,7 +12,7 @@ router.get("/hotels", async (req, res) => {
   }
 });
 
-router.post("/hotels", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     let newHotel = new hotelModel({
       nombreHotel: req.body.nombreHotel,
@@ -28,3 +28,4 @@ router.post("/hotels", async (req, res) => {
 });
 
 module.exports = router;
+

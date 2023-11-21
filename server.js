@@ -1,26 +1,23 @@
 const express = require("express");
-require("./database");
 const cors = require("cors");
+const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 
-//Middlewares
+// Mongo
+const mongoConnection = 'mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/';
+mongoose.connect(mongoConnection);
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-//Routes
-app.use(require("./app/routes/hotels"));
+// Routes
+app.use("/api/hoteles", require("./app/routes/hotels"));
 app.use(require("./app/routes/viajes"));
 app.use(require("./app/routes/users"));
 
-//Init
+// Init
 app.listen(port, () => {
   console.log("Server running in port: 3000");
 });
-
-//Imprimiendo un hello world para ver si funciona.
-app.get("/", (_, res) => {
-  res.send("hello world");
-});
-
-module.exports = app;

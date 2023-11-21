@@ -45,17 +45,6 @@ function showMisViajes(viajes) {
     obtenerYMostrarMisViajes();
   });
   
-  function obtenerYMostrarMisViajes() {
-    try {
-      const usuarioId = 'usuario123';
-  
-      const response = await fetch(`http://localhost:3000/viajes?usuario=${usuarioId}`);
-      const viajes = await response.json();
-      showMisViajes(viajes);
-    } catch (error) {
-      console.error('Error al obtener mis viajes:', error);
-    }
-  }
 
 document.getElementById("tablaViajes").innerHTML = item;
   //mostramos el resumen
