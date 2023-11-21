@@ -1,10 +1,4 @@
 const mongoose = require("mongoose");
-<<<<<<< HEAD
-
-//const mongoConnection = "mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/";
-const mongoConnection = "mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/";
-=======
->>>>>>> 2e33fdb756ef89cbaf9894135995319183d5038c
 
 const mongoConnection =
   "mongodb+srv://admin:oceanflux@project.l7yrx7s.mongodb.net/";
