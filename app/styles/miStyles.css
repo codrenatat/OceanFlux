@@ -812,3 +812,33 @@ th {
 	background-color: rgba(243, 243, 243, 0.496);
 }
 
+.alert {
+  padding: 20px;
+  color: white;
+	position: absolute;
+	right: 5%;
+	top: 10%;
+}
+
+.alert--danger {
+	background-color: #f44336;
+}
+
+.alert--success {
+	background-color: rgb(4, 170, 109);
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

@@ -1,34 +1,73 @@
-async function MostarHoteles() {
+(async () => {
+  const contenedorHoteles = document.getElementById("contenedor-hoteles");
+  contenedorHoteles.innerHTML = "";
   try {
-      const response = await fetch('http://localhost:3000/hotels');
-      const hoteles = await response.json();
+    const res = await fetch("http://localhost:3000/hotels");
+    const data = await res.json();
 
-      const contenedorHoteles = document.getElementById('contenedor-hoteles');
+    data[0].hoteles.forEach((hotel) => {
+      const cardHotel = document.createElement("div");
+      cardHotel.classList.add("card2");
+      cardHotel.innerHTML = `
+          <div class="card2-content">
+            <h41 class="card2-title">HOTEL:</h41><h14>${hotel.nombreHotel}<br></h14>
+            <h41 class="card2-title">PLAYA:</h41><h14>${hotel.playa}<br></h14>
+            <h41 class="card2-title">PRECIO x NOCHE:</h41><h14>${hotel.precioxnoche} MXN<br></h14>
+            <h41 class="card2-title">CONVENIO:</h41><h14>${hotel.convenio}<br></h14>
+    
+            <button type="button" class="btn btn-primary" onclick="addHotel('usuario', 'correo', '${hotel.playa}', '${hotel.nombreHotel}', '${hotel.precioxnoche}')">
+              Agregar a mi viaje!
+            </button>
 
-      contenedorHoteles.innerHTML = '';
-
-      hoteles.forEach((hotel) => {
-          const cardHotel = document.createElement('div');
-          cardHotel.classList.add('card2');
-
-          cardHotel.innerHTML = `
-              <div class="card2-content">
-                  <h41 class="card2-title">HOTEL:</h41><h14>${hotel.nombreHotel}<br></h14>
-                  <h41 class="card2-title">PLAYA:</h41><h14>${hotel.playa}<br></h14>
-                  <h41 class="card2-title">PRECIO x NOCHE:</h41><h14>${hotel.precioxnoche} MXN<br></h14>
-                  <h41 class="card2-title">CONVENIO:</h41><h14>${hotel.convenio}<br></h14>
-
-                  <button type="button" class="btn btn-primary" onclick="addHotel('${hotel._id}', '${hotel.nombreHotel}', '${hotel.playa}', ${hotel.precioxnoche})">
-                      Agregar a mi viaje!
-                  </button>
-              </div>
-          `;
-
-          contenedorHoteles.appendChild(cardHotel);
-      });
+          </div>
+        `;
+      contenedorHoteles.appendChild(cardHotel);
+    });
   } catch (error) {
-      console.error('Error al obtener hoteles desde el servidor:', error);
+    const container = document.createElement("div");
+    container.classList.add("error");
+    container.innerHTML = "No hotels to show";
+    contenedorHoteles.appendChild(container);
+    console.log(JSON.stringify(error));
+  }
+})();
+
+async function addHotel(usuario, correo, playa, hotel, total) {
+  const tile = document.createElement("div");
+  try {
+    const res = await fetch("http://localhost:3000/viajes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ usuario, correo, playa, hotel, total }),
+    });
+    const data = await res.json();
+    console.log(data);
+    if (!data.errors) {
+      tile.innerHTML = `
+        <div class="alert alert--success">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <strong>Bien!</strong> Tu reservación se ha realizado con éxito
+        </div>
+      `;
+    } else {
+      tile.innerHTML = `
+        <div class="alert alert--danger">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <strong>Oops!</strong> Hemos tenido un problema para agendar la reservación
+        </div>
+      `;
+    }
+    document.body.appendChild(tile);
+  } catch (error) {
+    tile.innerHTML = `
+      <div class="alert alert--danger">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Oops!</strong> Hemos tenido un problema para agendar la reservación
+      </div>
+    `;
+    document.body.appendChild(tile);
+    console.error("ERROR!!!", JSON.stringify(error));
   }
 }
-MostarHoteles();
-

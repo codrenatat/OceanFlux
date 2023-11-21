@@ -1,4 +1,1 @@
 # OceanFlux
-
-[16:17, 20/11/2023] Yami: te explicooo, para que me digas que hacer jajajaja porque tengo un desmadre, ubica que tengo que hacer una página de cotizar viajes usando mongo , so, el usuario puede agregar su viaje desde hoteles a base de un botón y se manda a la tablita de la pantalla de mis viajes... donde el usuario desde ahí, puede agregar el numero de noches y numero de personas desde la tabla y ya, te debe sacar el total, y ya es todo jajajaj lo que me toca a mi... porque ya mi compañero debe hacer unas cosas de que, dependiendo si entra un admin o no, va a poder agregar hoteles nuevos vaya desde la base de datos
-[16:18, 20/11/2023] Yami: y como primero entregamos el front, ya tuvimos que quitar cositas del front de viajes  y hoteles jajaja para agregar lo de la base de datos, te pasaré el archivo para que veas como esta todo mi desmadre jajajaja, no te vayas a reír :( esta bien feo ahora si
