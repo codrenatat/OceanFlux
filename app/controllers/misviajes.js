@@ -1,63 +1,57 @@
-class TravelCart {
-    constructor() {
-      this.viajes = [];
-    }
-  
-    agregarViaje(hotelId, noches, numPersonas) {
-      let viajeExistente = this.viajes.find((viaje) => viaje.hotelId === hotelId);
-  
-      if (viajeExistente) {
-        // Si ya existe el viaje, actualiza la información
-        viajeExistente.noches = noches;
-        viajeExistente.numPersonas = numPersonas;
-      } else {
-        // Si no existe, agrega un nuevo viaje
-        this.viajes.push({ hotelId, noches, numPersonas });
-      }
-    }
-  
-    actualizarViaje(hotelId, noches, numPersonas) {
-      let viajeExistente = this.viajes.find((viaje) => viaje.hotelId === hotelId);
-  
-      if (viajeExistente) {
-        viajeExistente.noches = noches;
-        viajeExistente.numPersonas = numPersonas;
-      } else {
-        // Manejar el caso si el viaje no existe
-        throw new TravelCartException("Viaje no encontrado.");
-      }
-    }
-  
-    eliminarViaje(hotelId) {
-      let index = this.viajes.findIndex((viaje) => viaje.hotelId === hotelId);
-  
-      if (index !== -1) {
-        this.viajes.splice(index, 1);
-      } else {
-        // Manejar el caso si el viaje no existe
-        throw new TravelCartException("Viaje no encontrado.");
-      }
-    }
-  
-    calcularTotal(hoteles) {
-      let total = 0;
-  
-      for (let viaje of this.viajes) {
-        let hotel = hoteles.find((h) => h._uuid === viaje.hotelId);
-        if (hotel) {
-          total += hotel.precioxnoche * viaje.noches * viaje.numPersonas;
-        }
-      }
-  
-      return total;
-    }
+async function actualizarTotalViajes() {
+  try {
+    const response = await fetch("http://localhost:3000/viajes");
+    const viajes = await response.json();
+
+    let totalViajes = 0;
+    const resumenViajes = document.getElementById("resumenViajes");
+    resumenViajes.innerHTML = "";
+
+    viajes.forEach((viaje) => {
+      const subtotal = viaje.precioxNoche * viaje.numPersonas * viaje.numNoches;
+      totalViajes += subtotal;
+
+      const detalleViaje = `${viaje.numPersonas} personas, ${viaje.numNoches} noches en ${viaje.hotel}: $${subtotal} MXN<br>`;
+      resumenViajes.innerHTML += detalleViaje;
+    });
+
+    document.getElementById("totalViajes").textContent = `$${totalViajes}`;
+  } catch (error) {
+    console.error("Error al obtener viajes:", error);
   }
-  
-  class TravelCartException {
-    constructor(errorMessage) {
-      this.errorMessage = errorMessage;
-    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const table = document.getElementById("viajesTable");
+  const tbody = table.querySelector("tbody");
+
+  function addRow(idViaje, playa, hotel, numNoches, numPersonas, precioNoche) {
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+          <td>${idViaje}</td>
+          <td>${playa}</td>
+          <td>${hotel}</td>
+          <td>${numNoches}</td>
+          <td>${numPersonas}</td>
+          <td class="total">${calcularTotal(
+            numNoches,
+            numPersonas,
+            precioNoche
+          )}</td>
+          <td><button onclick="eliminarViaje(this)">Eliminar</button></td>
+          `;
+    tbody.appendChild(newRow);
   }
-  
-  module.exports = TravelCart;
-  
+
+  window.eliminarViaje = function (button) {
+    const row = button.closest("tr");
+    tbody.removeChild(row);
+  };
+
+  function calcularTotal(numNoches, numPersonas, precioNoche) {
+    const total = numNoches * numPersonas * precioNoche;
+    return total;
+  }
+
+  addRow("ID123", "Playa Ejemplo", "Hotel Ejemplo", 3, 2, 100);
+});
