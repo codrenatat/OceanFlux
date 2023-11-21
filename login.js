@@ -17,24 +17,27 @@ function iniciarSesion() {
     const usuario = document.getElementById("usuario").value;
     const contrasenia = document.getElementById("password").value;
 
-    // Enviar datos al servidor
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/login",
-        data: {
+    // Enviar datos al servidor utilizando fetch
+    fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
             usuario,
-            contrasenia
-        },
-        success: function (response) {
-            console.log("Inicio de sesión exitoso:", response);
-        },
-        error: function (error) {
+            contrasenia,
+        }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Inicio de sesión exitoso:", data);
+        })
+        .catch(error => {
             console.error("Error al iniciar sesión:", error);
-        },
-        complete: function () {
+        })
+        .finally(() => {
             document.getElementById("loadingSpinner").style.display = "none";
-        }
-    });
+        });
 }
 
 function registrarUsuario() {
@@ -46,25 +49,29 @@ function registrarUsuario() {
     const edad = document.getElementById("edad").value;
     const genero = document.getElementById("genero").value;
 
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/register",
-        data: {
+    // Enviar datos al servidor utilizando fetch
+    fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
             nombre,
             correo,
             contrasenia,
             edad,
-            genero
-        },
-        success: function (response) {
-            console.log("Usuario registrado con éxito:", response);
-        },
-        error: function (error) {
+            genero,
+        }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Usuario registrado con éxito:", data);
+        })
+        .catch(error => {
             console.error("Error al registrar usuario:", error);
-        },
-        complete: function () {
+        })
+        .finally(() => {
             document.getElementById("loadingS").style.display = "none";
-        }
-    });
+        });
 }
 
