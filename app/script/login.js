@@ -1,3 +1,4 @@
+/*
 function newUser(){
     let username = document.getElementById(usernameRegister).value;
     let mail = document.getElementById(mailRegister).value;
@@ -19,8 +20,9 @@ function newUser(){
 
     alert("Nuevo Usuario Registrado");
 }
+*/
 
-/*$(document).ready(function() {
+$(document).ready(function() {
     $("#loginButton").click(function() {
         iniciarSesion();
     });
@@ -96,4 +98,3 @@ function registrarUsuario() {
             document.getElementById("loadingS").style.display = "none";
         });
 }
-*/
