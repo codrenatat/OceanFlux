@@ -1,4 +1,4 @@
-function newUser(){
+/*function newUser(){
     let username = document.getElementById(usernameRegister).value;
     let mail = document.getElementById(mailRegister).value;
     let password= document.getElementById(passwordRegister).value;
@@ -18,9 +18,9 @@ function newUser(){
     xhr.send(JSON.stringify(PostUser));
 
     alert("Nuevo Usuario Registrado");
-}
+}*/
 
-/*$(document).ready(function() {
+$(document).ready(function() {
     $("#loginButton").click(function() {
         iniciarSesion();
     });
@@ -96,4 +96,3 @@ function registrarUsuario() {
             document.getElementById("loadingS").style.display = "none";
         });
 }
-*/
