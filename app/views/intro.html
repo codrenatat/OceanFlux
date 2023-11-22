@@ -20,6 +20,8 @@
 
 <body class="is-preload">
 
+<div id="alertContainer"></div>
+
 <nav class="navbar2">
 	<a href="intro.html">
 		<h1>OceanFlux</h1>
@@ -133,7 +135,7 @@
 			</div>
 			<div class="modal-footer">
 				<button data-bs-toggle="modal" data-bs-target="#signupModal" type="button" class="btn btn-primary">CREAR CUENTA</button>
-				<button type="button" class="btn btn-danger">Cerrar Sesión</button>
+				<button id="logoutButton" type="button" class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
 			</div>
 		</div>
 	</div>
@@ -188,7 +190,6 @@
 	</div>
 </div>
 
-<div id="alertContainer"></div>
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
