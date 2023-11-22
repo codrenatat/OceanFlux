@@ -31,6 +31,18 @@ Content-Type: application/json
 ###Prueba del GET de users
 GET http://localhost:3000/users
 
+###Prueba de GET con nombre de usuario
+GET http://localhost:3000/users/username
+
+###Prueba de GET con nombre de usuario
+GET http://localhost:3000/users/ren
+
+###Prueba de GET con nombre de usuario
+GET http://localhost:3000/users/username/lol
+
+###Prueba de GET con nombre de usuario
+GET http://localhost:3000/users/username/nose
+
 ###Prueba del POST de users
 POST http://localhost:3000/users
 Content-Type: application/json

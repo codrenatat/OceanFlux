@@ -27,17 +27,13 @@ const usersSchema = new Schema({
     }
 });
 
-usersSchema.pre('save', async function (next) {
-    const user = this;
-    if (!user.isModified('contrasenia')) return next();
+usersSchema.methods.encryptarContrasenia = (contrasenia)=>{
+    let hash = bcrypt.hashSync(contrasenia,10);
+    return hash;
+}
 
-    const salt = await bcrypt.genSalt(10);
-    user.contrasenia = await bcrypt.hash(user.contrasenia, salt);
-    next();
-});
-
-usersSchema.methods.matchPassword = async function (password) {
-    return await bcrypt.compare(password, this.contrasenia);
-};
+usersSchema.methods.compararContrasenia = function(contrasenia){
+    return bcrypt.compareSync(contrasenia,this.contrasenia);
+}
 
 module.exports = model('Users', usersSchema);
