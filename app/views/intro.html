@@ -35,8 +35,8 @@
 			<nav>
 				<ul>
 					<!-- Modal de inicio de sesión -->
-					<a class="nav-link" href="#" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal" role="button">
-						<i class="fa-regular fa-user custom-icon" style="color: #88b4be;"></i> Mi cuenta
+					<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" role="button">
+						<i class="fa-regular fa-user custom-icon" style="color: #88b4be;"></i> <span id="miCuentaText">Mi cuenta</span>
 					</a>
 					<a class="nav-link" href="misviajes.html" id="misviajes" role="button" style="margin: 1cm;">
 						<i class="fa-solid fa-umbrella-beach" style="color: #88b4be;"></i> Mis viajes
@@ -61,7 +61,6 @@
 					<i class="fa-solid fa-user" style="color: #ffffff;"></i> Mi Cuenta
 				</a>
 			</li>
-
 			<li><a href="misviajes.html"><i class="fa-solid fa-umbrella-beach" style="color: #ffffff;"></i> Mis Viajes</a></li>
 		</ul>
 	</nav>
@@ -188,6 +187,8 @@
 	</div>
 </div>
 
+<div id="alertContainer"></div>
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
@@ -198,7 +199,7 @@
 <script src="../styles/introStyles/assets/js/breakpoints.min.js"></script>
 <script src="../styles/introStyles/assets/js/util.js"></script>
 <script src="../styles/introStyles/assets/js/main.js"></script>
-<script src="../../login.js"></script>
+<script src="../script/login.js"></script>
 
 </body>
 </html>

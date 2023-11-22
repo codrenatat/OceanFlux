@@ -59,5 +59,46 @@ router.post("/users", async(req, res) => {
     }
 });
 
-module.exports = router;
+// Ruta para el inicio de sesión
+router.post("/login", async (req, res) => {
+    try {
+        const { usuario, contrasenia } = req.body;
 
+        const userFound = await usersModel.findOne({ nombre: usuario });
+
+        if (!userFound) {
+            return res.status(404).json({ mensaje: "No se encontró el usuario." });
+        }
+
+        // Verificar la contraseña
+        if (userFound.compararContrasenia(contrasenia)) {
+            res.status(200).json(userFound);
+        } else {
+            res.status(401).json({ mensaje: "La contraseña no es correcta." });
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Ruta para el registro de usuarios
+router.post("/register", async (req, res) => {
+    try {
+        const { nombre, correo, contrasenia, edad, genero } = req.body;
+
+        let newUser = new usersModel({
+            nombre,
+            correo,
+            contrasenia,
+            edad,
+            genero,
+        });
+
+        let userSaved = await newUser.save();
+        res.status(201).json(userSaved);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+module.exports = router;

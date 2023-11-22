@@ -1,25 +1,3 @@
-/*function newUser(){
-    let username = document.getElementById(usernameRegister).value;
-    let mail = document.getElementById(mailRegister).value;
-    let password= document.getElementById(passwordRegister).value;
-    let age = document.getElementById(ageRegister).value;
-
-    const PostUser = 
-    {
-        username:username,
-        mail:mail,
-        password:password,
-        age:age
-    }
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST",'http://localhost:3000/users');
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(JSON.stringify(PostUser));
-
-    alert("Nuevo Usuario Registrado");
-}*/
-
 $(document).ready(function() {
     $("#loginButton").click(function() {
         iniciarSesion();
@@ -53,14 +31,33 @@ function iniciarSesion() {
         .then(response => response.json())
         .then(data => {
             console.log("Inicio de sesión exitoso:", data);
+
+            // Mostrar alerta de éxito
+            if (!data.errors) {
+                mostrarAlerta("success", "¡Bien! Inicio de sesión exitoso");
+
+                // Cambiar el texto de "Mi cuenta" al nombre de usuario
+                const nombreUsuario = data.nombre; // Asegúrate de que la respuesta del servidor incluya el nombre de usuario
+                cambiarTextoMiCuenta(nombreUsuario);
+            }
         })
         .catch(error => {
             console.error("Error al iniciar sesión:", error);
+            // Mostrar alerta de error
+            mostrarAlerta("error", "Error al iniciar sesión");
         })
         .finally(() => {
             document.getElementById("loadingSpinner").style.display = "none";
         });
 }
+
+function cambiarTextoMiCuenta(nombreUsuario) {
+    // Cambiar el texto de "Mi cuenta" al nombre de usuario
+    document.getElementById("miCuentaText").innerText = nombreUsuario;
+}
+
+
+
 
 function registrarUsuario() {
     console.log("Registro...");
@@ -95,4 +92,17 @@ function registrarUsuario() {
         .finally(() => {
             document.getElementById("loadingS").style.display = "none";
         });
+}
+
+function mostrarAlerta(type, message) {
+    const alertContainer = document.getElementById("alertContainer");
+
+    const alertElement = document.createElement("div");
+    alertElement.className = `alert alert--${type}`;
+    alertElement.innerHTML = `
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>${type === "success" ? "¡Bien!" : "Error"}</strong> ${message}
+    `;
+
+    alertContainer.appendChild(alertElement);
 }
