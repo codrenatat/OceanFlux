@@ -58,7 +58,7 @@ function iniciarSesion() {
 
             // Mostrar alerta de éxito
             if (!data.errors) {
-                mostrarAlerta("success", "¡Bien! Inicio de sesión exitoso");
+                mostrarAlerta("success", "Inicio de sesión exitoso");
 
                 // Cambiar el texto de "Mi cuenta" al nombre de usuario
                 const nombreUsuario = data.nombre; // Asegúrate de que la respuesta del servidor incluya el nombre de usuario
@@ -79,9 +79,6 @@ function cambiarTextoMiCuenta(nombreUsuario) {
     // Cambiar el texto de "Mi cuenta" al nombre de usuario
     document.getElementById("miCuentaText").innerText = nombreUsuario;
 }
-
-
-
 
 function registrarUsuario() {
     console.log("Registro...");
@@ -109,14 +106,22 @@ function registrarUsuario() {
         .then(response => response.json())
         .then(data => {
             console.log("Usuario registrado con éxito:", data);
+
+            // Mostrar alerta de éxito
+            if (!data.errors) {
+                mostrarAlerta("success", "Usuario registrado con éxito");
+            }
         })
         .catch(error => {
             console.error("Error al registrar usuario:", error);
+            // Mostrar alerta de error
+            mostrarAlerta("error", "Error al registrar usuario");
         })
         .finally(() => {
             document.getElementById("loadingS").style.display = "none";
         });
 }
+
 
 function mostrarAlerta(type, message) {
     const alertContainer = document.getElementById("alertContainer");
