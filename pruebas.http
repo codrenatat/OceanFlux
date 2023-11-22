@@ -19,7 +19,6 @@ Content-Type: application/json
   "contrasenia": "lol"
 }
 
-###
 ###Prueba del GET de hotels
 GET http://localhost:3000/hotels
 
