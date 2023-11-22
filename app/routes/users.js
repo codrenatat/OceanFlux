@@ -14,42 +14,33 @@ router.get("/users", async(req, res) => {
     }
 });
 
-router.get('/users/:nombre',async(req,res)=>{
-    try{
-        const nombre = req.params.nombre;
-        const usuario = await usersModel.findOne({nombre:nombre});
-
-        if(!usuario){
-            return res.status(404).json({mensaje:"Usuario no registrado"});
-        } else { 
-            res.status(200).json(usuario); 
-        }
-    }catch(error){
-        res.status(500).send("Error al obtener el usuario");
-    }
-});
-
-router.get('/users/:nombre/:contrasenia',async(req,res)=>{
-    try{
+router.get('/users/:nombre/:contrasenia?', async (req, res) => {
+    try {
         const nombre = req.params.nombre;
         const contrasenia = req.params.contrasenia;
 
-        const usuario = await usersModel.findOne({nombre:nombre});
-        
-        if(!usuario){
-            return res.status(404).json({mensaje:"No se encontro el usuario."});
+        const usuario = await usersModel.findOne({ nombre: nombre });
 
-        }else{
-            if(usuario.compararContrasenia(contrasenia)){
+        if (!usuario) {
+            return res.status(404).json({ mensaje: "No se encontró el usuario." });
+        } else {
+            if (contrasenia) {
+                // Si hay una contraseña en los parámetros, verificarla
+                if (usuario.compararContrasenia(contrasenia)) {
+                    res.status(200).json(usuario);
+                } else {
+                    res.status(500).send("La contraseña no es correcta.");
+                }
+            } else {
+                // Si no hay contraseña en los parámetros, devolver solo la información del usuario
                 res.status(200).json(usuario);
-            }else{
-                res.status(500).send("La contraseña no es correcta.");
             }
         }
-    }catch(error){
-        res.status(500).send("Error"+error.message);
+    } catch (error) {
+        res.status(500).send("Error" + error.message);
     }
 });
+
 
 //POSTS
 router.post("/users", async(req, res) => {

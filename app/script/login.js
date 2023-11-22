@@ -1,4 +1,26 @@
-$(document).ready(function() {
+function newUser(){
+    let username = document.getElementById(usernameRegister).value;
+    let mail = document.getElementById(mailRegister).value;
+    let password= document.getElementById(passwordRegister).value;
+    let age = document.getElementById(ageRegister).value;
+
+    const PostUser = 
+    {
+        username:username,
+        mail:mail,
+        password:password,
+        age:age
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST",'http://localhost:3000/users');
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify(PostUser));
+
+    alert("Nuevo Usuario Registrado");
+}
+
+/*$(document).ready(function() {
     $("#loginButton").click(function() {
         iniciarSesion();
     });
@@ -74,4 +96,4 @@ function registrarUsuario() {
             document.getElementById("loadingS").style.display = "none";
         });
 }
-
+*/
