@@ -1,3 +1,25 @@
+### Registro de usuario ###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "nombre": "usuario1",
+  "correo": "usuario1@example.com",
+  "contrasenia": "password123",
+  "edad": 25,
+  "genero": "hombre"
+}
+
+### Inicio de sesión ###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "usuario": "username",
+  "contrasenia": "lol"
+}
+
+###
 ###Prueba del GET de hotels
 GET http://localhost:3000/hotels
 

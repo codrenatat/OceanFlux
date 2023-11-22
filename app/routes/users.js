@@ -81,8 +81,6 @@ router.post("/login", async (req, res) => {
     }
 });
 
-module.exports = router;
-
 // Ruta para el registro de usuarios
 router.post("/register", async (req, res) => {
     try {
@@ -102,4 +100,6 @@ router.post("/register", async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 });
+
+module.exports = router;
 
