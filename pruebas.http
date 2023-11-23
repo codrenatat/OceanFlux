@@ -55,3 +55,5 @@ Content-Type: application/json
     "genero": "otro"
 }
 
+###Prueba de GET con nombre de usuario
+GET http://localhost:3000/admin

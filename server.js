@@ -13,6 +13,8 @@ app.use(express.json());
 app.use(require("./app/routes/hotels"));
 app.use(require("./app/routes/viajes"));
 app.use(require("./app/routes/users"));
+app.use(require("./app/routes/admin"));
+
 
 //Init
 app.listen(port, () => {
