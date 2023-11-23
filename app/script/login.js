@@ -98,6 +98,11 @@ function registrarUsuario() {
         });
 }
 
+function cerrarSesion() {
+    window.location.href = "intro.html";
+}
+
+
 
 function mostrarAlerta(type, message) {
     const alertContainer = document.getElementById("alertContainer");
