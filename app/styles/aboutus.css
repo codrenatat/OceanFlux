@@ -1,0 +1,18 @@
+h3 {
+    font-size: 35px;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(28, 55, 56); 
+}
+
+p {
+    margin-left: -5px;
+    text-align: justify;
+    color: black; /* Ajusta el color del texto según sea necesario */
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.5); /* Ajusta los valores según sea necesario */
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+}
+
+
+

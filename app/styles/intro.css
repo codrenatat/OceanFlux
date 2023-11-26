@@ -816,17 +816,50 @@ a {
 
 }
 
-a:hover {
-	color: inherit;
-}
-
-.navbar2 h1 {
-	font-size: 2em;
+.navbar2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	margin-bottom: 60px;
+  }
+  
+  .navbar2 h1 {
+	font-size: 70px;
 	font-weight: 900;
 	letter-spacing: -0.035em;
 	line-height: 1em;
-	color: #88b4be;
+	color: #FFFFFF;
 	margin: 0;
-	margin-top: 2cm;
-	margin-left: 1cm;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+
+body {
+    margin: 0;
+    padding: 0;
 }
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+	opacity: 0.8; 
+
+}
+
+
+.pag4 {
+    background-image: url('/app/photos/fondo/fondo3.jpg');
+}
+
+
+
+
+

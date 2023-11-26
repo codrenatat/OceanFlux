@@ -785,11 +785,35 @@ a {
 a:hover {
   color: inherit; 
 }
+
+.navbar2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	margin-bottom: 60px;
+  }
+  
+  .navbar2 h1 {
+	font-size: 70px;
+	font-weight: 900;
+	letter-spacing: -0.035em;
+	line-height: 1em;
+	color: #FFFFFF;
+	margin: 0;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  header{
+	margin-top: -90px;
+}
+
     
 table {
 	border-collapse: collapse;
 	width: 80%;
-	margin: 20px auto; /* Agrega un margen superior e inferior de 20px y centrará la tabla horizontalmente */
+	margin: 20px auto; 
 	margin-bottom: 12cm;
 }
 
@@ -842,3 +866,91 @@ th {
 .closebtn:hover {
   color: black;
 }
+
+.estilotabla th, .estilotabla td {
+    padding: 9px; 
+	width: 80%; 
+    font-size: 23px;
+}
+
+
+#videoPlayer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1; 
+	padding: 0;
+}
+
+h41{
+	font-size: 32px;
+	color:black;
+	letter-spacing: 1px;
+}
+
+h14{
+	font-size: 30px;
+	color:black;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none; 
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background-color: rgba(0, 217, 255, 0.385); 
+    color: black; 
+    transition: color 0.3s; 
+    margin: 10px auto;
+    display: block; 
+}
+
+button:hover {
+    background-color: rgba(115, 196, 210, 0.8);
+    color: white; 
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+	opacity: 0.8; 
+
+}
+
+
+
+.pag1 {
+    background-image: url('/app/photos/fondo/fondo4.jpg');
+}
+
+.pag2 {
+    background-image: url('/app/photos/fondo/fondo2.jpg');
+}
+
+.pag3 {
+    background-image: url('/app/photos/fondo/fondo1.jpg');
+}
+
+
+
+
+
+

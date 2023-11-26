@@ -1,39 +1,39 @@
-const {Schema, model} = require('mongoose');
-const bcrypt = require('bcrypt')
+const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const usersSchema = new Schema({
-    nombre:{
+    nombre: {
         type: String,
         required: true
     },
-    correo:{
-        type:String,
+    correo: {
+        type: String,
         required: true
     },
     contrasenia: {
         type: String,
         required: true
-      },
-      edad: {
+    },
+    edad: {
         type: Number,
         min: 0,
         max: 120,
         required: true
-      },
-      genero: {
+    },
+    genero: {
         type: String,
-        enum: ['F', 'M'],
+        enum: ['hombre', 'mujer', 'otro', 'prefiero-no-decirlo'],
         required: true
-      }
-  });
+    }
+});
 
-usersSchema.methods.encryptPassword = async password => {
-    const salt = await bcrypt.genSalt(10);
-    return await bcrypt.hash(password, salt);
-};
-
-usersSchema.methods.matchPassword = function(password){
-    return bcrypt.compare(password, this.contrasenia)
+usersSchema.methods.encryptarContrasenia = (contrasenia)=>{
+    let hash = bcrypt.hashSync(contrasenia,10);
+    return hash;
 }
-  
-  module.exports = model('Users', usersSchema);
+
+usersSchema.methods.compararContrasenia = function(contrasenia){
+    return bcrypt.compareSync(contrasenia,this.contrasenia);
+}
+
+module.exports = model('Users', usersSchema);
