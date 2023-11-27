@@ -8,7 +8,7 @@ router.get("/viajes", async (_, res) => {
     const misViajes = await viajesModel.find();
     res.status(200).json(misViajes);
   } catch (error) {
-    res.status(500).send("Cannot get mihotel");
+    res.status(500).send("Cannot get misviaje");
   }
 });
 
@@ -25,6 +25,21 @@ router.post("/viajes", async (req, res) => {
     res.status(201).json(viajeSave);
   } catch (error) {
     res.status(400).send(error);
+  }
+});
+
+router.delete("/viajes/:id", async (req, res) => {
+  try {
+    const viajeId = req.params.id;
+    const deletedViaje = await viajesModel.findByIdAndDelete(viajeId);
+
+    if (!deletedViaje) {
+      return res.status(404).send("Viaje not found");
+    }
+
+    res.status(200).json(deletedViaje);
+  } catch (error) {
+    res.status(500).send("Error deleting viaje");
   }
 });
 
